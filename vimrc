@@ -13,6 +13,9 @@ Bundle 'nvie/vim-flake8'
 Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdtree'
 Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic'
+Bundle 'bling/vim-airline'
 
 
 set nocompatible                " choose no compatibility with legacy vi
@@ -102,3 +105,17 @@ noremap <Leader>n :NERDTreeToggle<CR>
 " Ignore long lines error
 let g:pep8_ignore="E501,W601"
 let g:flake8_ignore="E501"
+
+" airline
+let g:airline_theme='badwolf'
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_linecolumn_prefix = '␊ '
+let g:airline_linecolumn_prefix = '␤ '
+let g:airline_linecolumn_prefix = '¶ '
+let g:airline_fugitive_prefix = '⎇ '
+let g:airline_paste_symbol = 'ρ'
+let g:airline_paste_symbol = 'Þ'
+let g:airline_paste_symbol = '∥'
