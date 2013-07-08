@@ -1,0 +1,33 @@
+[user]
+    name = Thúlio Costa
+    email = thulio@thuliocosta.com
+[push]
+    default = tracking
+[core]
+    editor = vim
+    pager = less -r
+[color]
+    branch = auto
+    diff = auto
+    grep = auto
+    interactive = auto
+    status = auto
+[alias]
+    #lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    lc = log ORIG_HEAD.. --stat --no-merges
+    # from http://blog.kfish.org/2010/04/git-lola.html
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ll = log --graph --date=short
+
+    # from https://git.wiki.kernel.org/index.php/Aliases
+    whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+    whatis = show -s --pretty='tformat:%h (%s, %ad)' --date=short
+
+    # show a log without the formating, occasionaly handy for c&p
+    rawlog = log --format=\"format:commit %H%nAuthor:%an%n%n%B%n\"
+
+    st = status --short --branch
+    pick = cherry-pick --sign-off
+
