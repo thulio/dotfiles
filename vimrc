@@ -122,3 +122,18 @@ let g:airline_paste_symbol = 'ρ'
 
 let g:airline_enable_syntastic=1
 let g:airline_enable_fugitive=1
+
+" Move Backup Files to ~/.vim/sessions
+set backupdir=~/.vim/sessions
+set dir=~/.vim/sessions
+
+" No annoying sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Show matching brackets when text indicator is over them
+set showmatch
+" How many tenths of a second to blink when matching brackets
+set mat=2
