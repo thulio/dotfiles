@@ -158,3 +158,4 @@ workspace 1 output HDMI1
 workspace 2 output VGA1
 assign [class="Chromium-browser" instance="chromium-browser"] 1
 assign [class="jetbrains-pycharm" instance="sun-awt-X11-XFramePeer"] 3
+assign [class="Navigator" instance="Firefox"] 1
