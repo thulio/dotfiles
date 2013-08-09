@@ -147,14 +147,17 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        #status_command py3status -c ~/.i3/status.conf -i ~/.i3/py3status/
         position top
 }
 
 default_orientation vertical
 
 # key bindings
+bindsym Mod1+Ctrl+l exec "i3lock -c 000000"
 
 # layout
+workspace_auto_back_and_forth yes
 workspace 1 output HDMI1
 workspace 2 output VGA1
 assign [class="Chromium-browser" instance="chromium-browser"] 1
