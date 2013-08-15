@@ -166,3 +166,7 @@ workspace 2 output VGA1
 assign [class="Chromium-browser" instance="chromium-browser"] 1
 assign [class="jetbrains-pycharm" instance="sun-awt-X11-XFramePeer"] 3
 assign [class="Navigator" instance="Firefox"] 1
+
+# background
+exec --no-startup-id xsetroot -solid "#000000"
+
