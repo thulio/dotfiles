@@ -10,6 +10,10 @@ import getpass
 
 
 class i3Exit:
+    def keypress(self, widget, event):
+        if event.keyval == gtk.keysyms.Escape:
+            gtk.main_quit()
+
     def disable_buttons(self):
         self.cancel.set_sensitive(False)
         self.logout.set_sensitive(False)
@@ -63,6 +67,7 @@ class i3Exit:
         self.window.stick
         self.window.set_position(1)
         self.window.connect("delete_event", gtk.main_quit)
+        self.window.connect("key-press-event", gtk.main_quit)
         windowicon = self.window.render_icon(gtk.STOCK_QUIT,
                                              gtk.ICON_SIZE_MENU)
         self.window.set_icon(windowicon)
