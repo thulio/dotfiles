@@ -154,7 +154,8 @@ bar {
 default_orientation vertical
 
 # key bindings
-bindsym Mod1+Ctrl+l exec "~/.i3/bin/i3-exit"
+bindsym Mod1+Ctrl+Shift+l exec "~/.i3/bin/i3-exit"
+bindsym Mod1+Ctrl+l exec "i3lock -c 000000"
 bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
 bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
 bindsym XF86AudioMute exec amixer -q set Master toggle
