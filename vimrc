@@ -16,6 +16,7 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
+Bundle 'itchyny/calendar.vim'
 
 
 set nocompatible                " choose no compatibility with legacy vi
@@ -137,3 +138,6 @@ set tm=500
 set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
+
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
