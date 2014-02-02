@@ -17,6 +17,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'bling/vim-airline'
 Bundle 'itchyny/calendar.vim'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-bundler'
+Bundle 'vim-scripts/dbext.vim'
 
 
 set nocompatible                " choose no compatibility with legacy vi
