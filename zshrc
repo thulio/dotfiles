@@ -57,7 +57,8 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/sbin:/u
 # Preferred editor for local and remote sessions
 export EDITOR='vim'
 
-export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin
+# Extra paths
+export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin:/usr/local/opt/go/libexec/bin
 export GO_PATH=$HOME/go
 
 setopt HIST_IGNORE_DUPS
