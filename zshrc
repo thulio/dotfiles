@@ -45,30 +45,19 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found archlinux git git-flow python virtualenvwrapper bundler rails thulio rbenv)
+plugins=(command-not-found osx brew git git-flow python virtualenvwrapper bundler rails thulio rbenv docker)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl"
+export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/sbin:/usr/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='gvim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
+export EDITOR='vim'
 
 export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin
 export GO_PATH=$HOME/go
 
 setopt HIST_IGNORE_DUPS
-xset -b
