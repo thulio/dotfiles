@@ -62,3 +62,5 @@ export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr
 export GO_PATH=$HOME/go
 
 setopt HIST_IGNORE_DUPS
+
+eval "$(rbenv init -)"
