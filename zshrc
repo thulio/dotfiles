@@ -61,6 +61,11 @@ export EDITOR='vim'
 export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin:/usr/local/opt/go/libexec/bin
 export GO_PATH=$HOME/go
 
+# Docker stuff
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=$HOME/.docker/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
 setopt HIST_IGNORE_DUPS
 
 eval "$(rbenv init -)"
