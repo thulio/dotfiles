@@ -102,7 +102,7 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+p
 
-set guifont=Ubuntu\ Mono\ 13
+set guifont=Menlo:h14
 
 " NERDTree
 noremap <Leader>n :NERDTreeToggle<CR>
