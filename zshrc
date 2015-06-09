@@ -59,7 +59,7 @@ export EDITOR='vim'
 
 # Extra paths
 export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin:/usr/local/opt/go/libexec/bin
-export GO_PATH=$HOME/go
+export GOPATH=$HOME/go
 
 # Docker stuff
 export DOCKER_HOST=tcp://192.168.59.103:2376
