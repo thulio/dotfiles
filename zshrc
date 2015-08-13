@@ -62,9 +62,7 @@ export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr
 export GOPATH=$HOME/go
 
 # Docker stuff
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=$HOME/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
+eval "$(docker-machine env dev)"
 
 setopt HIST_IGNORE_DUPS
 
