@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Plugin 'gmarik/vundle'
 Plugin 'kien/ctrlp.vim'
 Plugin 'klen/python-mode'
@@ -16,10 +16,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
-Plugin 'itchyny/calendar.vim'
 Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-bundler'
-Plugin 'vim-scripts/dbext.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'mattreduce/vim-mix'
+Plugin 'tpope/vim-surround'
+Plugin 'ctags.vim'
 call vundle#end()
 
 
@@ -112,21 +114,23 @@ let g:pep8_ignore="E501,W601"
 let g:flake8_ignore="E501"
 
 " airline
+let g:airline_symbols = {}
 let g:airline_theme='badwolf'
 "let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '«'
 let g:airline_right_sep = '◀'
 "let g:airline_linecolumn_prefix = '␊ '
-let g:airline_linecolumn_prefix = '␤ '
+let g:airline_symbols.linenr = '␤ '
 "let g:airline_linecolumn_prefix = '¶ '
-let g:airline_branch_prefix = '⎇ '
-let g:airline_paste_symbol = 'ρ'
+let g:airline_symbols.branch = '⎇ '
+let g:airline_symbols.paste = 'ρ'
+
 "let g:airline_paste_symbol = 'Þ'
 "let g:airline_paste_symbol = '∥'
 
-let g:airline_enable_syntastic=1
-let g:airline_enable_branch=1
+let g:airline#extensions#syntastic#enabled =1
+let g:airline#extensions#branch#enabled =1
 
 " Move Backup Files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
@@ -143,5 +147,9 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
-let g:calendar_google_calendar = 1
-let g:calendar_google_task = 1
+" Markdown support
+autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
+autocmd FileType markdown set tw=80
+
+let g:tagbar_autofocus = 0
+
