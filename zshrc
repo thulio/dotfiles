@@ -61,7 +61,7 @@ export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr
 export GOPATH=$HOME/go
 
 # Docker stuff
-eval "$(docker-machine env dev)"
+eval "$(docker-machine env default)" > /dev/null
 
 setopt HIST_IGNORE_DUPS
 
