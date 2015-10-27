@@ -58,6 +58,7 @@ export EDITOR='vim'
 
 # Extra paths
 export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin:/usr/local/opt/go/libexec/bin
+export PATH=$PATH:$HOME/projects/github/elixir/bin
 export GOPATH=$HOME/go
 
 # Docker stuff
