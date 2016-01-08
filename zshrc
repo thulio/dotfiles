@@ -62,7 +62,7 @@ export PATH=$PATH:$HOME/projects/github/elixir/bin
 export GOPATH=$HOME/go
 
 # Docker stuff
-eval "$(docker-machine env default)" > /dev/null
+# eval "$(docker-machine env default)" > /dev/null
 
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
