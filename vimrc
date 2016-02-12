@@ -16,12 +16,12 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/syntastic'
 Plugin 'bling/vim-airline'
-Plugin 'tpope/vim-rails'
-Plugin 'tpope/vim-bundler'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattreduce/vim-mix'
 Plugin 'tpope/vim-surround'
 Plugin 'ctags.vim'
+Plugin 'jscappini/material.vim'
+Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 
 
@@ -66,11 +66,11 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>t :CtrlP<cr>
 map <leader>T :CtrlPBuffer<cr>
 
-if !has("gui_running")
-    let g:solarized_termtrans=1
-endif
-set background=dark
-colorscheme solarized
+"if !has("gui_running")
+"    let g:solarized_termtrans=1
+"endif
+"set background=dark
+colorscheme material
 
 " Python-mode
 " Disable pylint checking every save
@@ -115,7 +115,8 @@ let g:flake8_ignore="E501"
 
 " airline
 let g:airline_symbols = {}
-let g:airline_theme='badwolf'
+let g:airline_solarized_bg='dark'
+let g:airline_theme='solarized'
 "let g:airline_left_sep = '»'
 let g:airline_left_sep = '▶'
 "let g:airline_right_sep = '«'
