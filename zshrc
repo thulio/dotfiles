@@ -60,8 +60,7 @@ export EDITOR='vim'
 export PATH=$PATH:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin:$HOME/bin
 export GOPATH=$HOME/go
 
-# Docker stuff
-# eval "$(docker-machine env default)" > /dev/null
+export HOMEBREW_NO_ANALYTICS=1
 
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
 setopt EXTENDED_HISTORY          # Write the history file in the ":start:elapsed;command" format.
