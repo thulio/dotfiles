@@ -37,7 +37,7 @@ DISABLE_AUTO_UPDATE="true"
 # much faster.
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
@@ -57,8 +57,7 @@ export PATH="/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/bin/core_perl:/sbin:/u
 export EDITOR='vim'
 
 # Extra paths
-export PATH=$PATH:$HOME/.gem/ruby/2.1.0/bin:$HOME/.rbenv/bin:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin:/usr/local/opt/go/libexec/bin
-export PATH=$PATH:$HOME/projects/github/elixir/bin
+export PATH=$PATH:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin:$HOME/bin
 export GOPATH=$HOME/go
 
 # Docker stuff
