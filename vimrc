@@ -22,6 +22,10 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctags.vim'
 Plugin 'jscappini/material.vim'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-classpath.git'
+Plugin 'kovisoft/paredit'
 call vundle#end()
 
 
@@ -154,3 +158,6 @@ autocmd FileType markdown set tw=80
 
 let g:tagbar_autofocus = 0
 
+
+noremap <C-e> :Eval <CR>
+noremap E :%Eval <CR>
