@@ -108,7 +108,7 @@ vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+p
 
-set guifont=Menlo:h14
+set guifont=Meslo\ LG\ L\ 14
 
 " NERDTree
 noremap <Leader>n :NERDTreeToggle<CR>
