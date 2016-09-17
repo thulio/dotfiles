@@ -45,7 +45,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found osx brew git git-flow python virtualenvwrapper rbenv docker zsh-syntax-highlighting heroku mix mix-fast thulio)
+plugins=(command-not-found osx brew git python virtualenvwrapper rbenv docker zsh-syntax-highlighting heroku lein thulio)
 
 source $ZSH/oh-my-zsh.sh
 
