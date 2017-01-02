@@ -4,7 +4,5 @@
                     [lein-ancient "0.6.10"]
                     [lein-cloverage "1.0.6"]
                     [proto-repl "0.3.1"]
-                    [nightlight/lein-nightlight "1.3.0"]
-                    [lein-virgil "0.1.4"]]}}
-
+                    [nightlight/lein-nightlight "1.3.0"]]}}
 
