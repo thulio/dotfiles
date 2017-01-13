@@ -45,7 +45,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found osx brew git python virtualenvwrapper rbenv docker zsh-syntax-highlighting heroku lein thulio)
+plugins=(command-not-found osx brew git python rbenv docker zsh-syntax-highlighting heroku lein thulio)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,5 +79,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which exenv > /dev/null; then eval "$(exenv init -)"; fi
-export NVM_DIR="$HOME/.nvm"
-. "$(brew --prefix nvm)/nvm.sh"
+if which pyenv > /dev/null; then pyenv virtualenvwrapper_lazy; fi
+#export NVM_DIR="$HOME/.nvm"
+#. "$(brew --prefix nvm)/nvm.sh"
