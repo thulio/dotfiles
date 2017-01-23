@@ -27,7 +27,7 @@ DISABLE_AUTO_UPDATE="true"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
@@ -45,7 +45,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(command-not-found osx brew git python rbenv docker zsh-syntax-highlighting heroku lein thulio)
+plugins=(osx brew git docker zsh-syntax-highlighting thulio)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -59,6 +59,8 @@ export EDITOR='vim'
 # Extra paths
 export PATH=$PATH:$JAVA_HOME/bin:/usr/bin/vendor_perl:/usr/local/heroku/bin:$HOME/bin
 export GOPATH=$HOME/go
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 export HOMEBREW_NO_ANALYTICS=1
 
@@ -77,8 +79,6 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; pyenv virtualenvwrapper_lazy; fi
 if which exenv > /dev/null; then eval "$(exenv init -)"; fi
-if which pyenv > /dev/null; then pyenv virtualenvwrapper_lazy; fi
-#export NVM_DIR="$HOME/.nvm"
-#. "$(brew --prefix nvm)/nvm.sh"
+#if which pyenv > /dev/null; then pyenv virtualenvwrapper_lazy; fi
