@@ -78,15 +78,14 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; pyenv virtualenvwrapper_lazy; fi
-if which exenv > /dev/null; then eval "$(exenv init -)"; fi
-#if which pyenv > /dev/null; then pyenv virtualenvwrapper_lazy; fi
-#
 if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
     export TERM=xterm-256color 
     export COLORTERM=1
     export PATH=$PATH:$HOME/.pyenv/bin:$HOME/.rbenv/bin:$HOME/.exenv/bin
 fi
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which pyenv > /dev/null; then pyenv virtualenvwrapper_lazy; fi
+if which exenv > /dev/null; then eval "$(exenv init -)"; fi
 
