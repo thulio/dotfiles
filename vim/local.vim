@@ -3,6 +3,7 @@ set nornu
 let g:spacevim_custom_plugins = [
  \ ['slashmili/alchemist.vim', {'on_ft': 'elixir'}],
  \ ['dracula/vim'],
+ \ ['godlygeek/csapprox'],
  \ ['tpope/vim-fireplace', {'on_ft': ['clojure', 'clojurescript']}],
  \ ['tpope/vim-classpath', {'on_ft': ['clojure', 'java', 'scala', 'clojurescript']}],
  \ ]
@@ -10,4 +11,4 @@ let g:spacevim_custom_plugins = [
 "let g:spacevim_colorscheme    = 'onedark'
 let g:spacevim_colorscheme    = 'dracula'
 
-set guifont=Hack:h12
+set guifont=Hack\ 12
