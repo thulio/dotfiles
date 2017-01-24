@@ -78,7 +78,7 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-if [ "$(expr substr $(uname -s) 1 5)" = "Linux" ]; then
+if [ "$(uname -s)" = "Linux" ] ; then
     export TERM=xterm-256color 
     export COLORTERM=1
     export PATH=$PATH:$HOME/.pyenv/bin:$HOME/.rbenv/bin:$HOME/.exenv/bin
