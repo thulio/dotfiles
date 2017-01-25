@@ -5,6 +5,7 @@ let g:spacevim_custom_plugins = [
  \ ['dracula/vim'],
  \ ['godlygeek/csapprox'],
  \ ['Shutnik/jshint2.vim', {'on_ft': ['javascript']}],
+ \ ['junegunn/limelight.vim'],
  \ ['tpope/vim-fireplace', {'on_ft': ['clojure', 'clojurescript']}],
  \ ['tpope/vim-classpath', {'on_ft': ['clojure', 'java', 'scala', 'clojurescript']}],
  \ ]
