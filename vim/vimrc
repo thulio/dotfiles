@@ -20,7 +20,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-fugitive'
 
 " Python
-Plugin 'klen/python-mode'
+"Plugin 'klen/python-mode'
 Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
 
@@ -133,26 +133,26 @@ let g:python_host_prog = '~/.pyenv/versions/2.7.13/bin/python'
 let g:python3_host_prog = '~/.pyenv/versions/3.6.0/bin/python'
 
 " Disable pylint checking every save
-let g:pymode_lint_write = 0
+"let g:pymode_lint_write = 0
 
 " Set key 'R' for run python code
-let g:pymode_run_key = 'R'
+"let g:pymode_run_key = 'R'
 
 " Disable folding
-let g:pymode_folding = 0
+"let g:pymode_folding = 0
 
 " Lint
 " Switch pylint or pyflakes code checker
 " values (pylint, pyflakes)
-let g:pymode_lint_checker = "pyflakes"
+"let g:pymode_lint_checker = "pyflakes"
 
 " Don't let pyflakes use the quickfix window
-let g:pyflakes_use_quickfix = 0
+"let g:pyflakes_use_quickfix = 0
 "
 " " Run pyflake8
 " autocmd FileType python map <Leader>8 :call Flake8()<CR>
 " " Run when saving py files
-autocmd BufWritePost *.py call Flake8()
+"autocmd BufWritePost *.py call Flake8()
 
 " Clojure
 au Filetype clojure nmap <c-c><c-k> :Require<cr>
