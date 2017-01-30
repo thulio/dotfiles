@@ -6,37 +6,50 @@ call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
+
+" Navigation
 Plugin 'kien/ctrlp.vim'
-Plugin 'klen/python-mode'
-Plugin 'nvie/vim-flake8'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
+
+" Misc programming
 Plugin 'scrooloose/syntastic'
-Plugin 'bling/vim-airline'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'mattreduce/vim-mix'
-Plugin 'tpope/vim-surround'
 Plugin 'ctags.vim'
-Plugin 'jscappini/material.vim'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-classpath.git'
-Plugin 'kovisoft/paredit'
+Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'tpope/vim-fugitive'
+
+" Python
+Plugin 'klen/python-mode'
+Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
-Plugin 'slashmili/alchemist.vim'
-Plugin 'dracula/vim'
-Plugin 'godlygeek/csapprox'
-Plugin 'Shutnik/jshint2.vim'
+
+" Clojure
 Plugin 'junegunn/limelight.vim'
 Plugin 'venantius/vim-eastwood'
 Plugin 'venantius/vim-cljfmt'
 Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-classpath.git'
 Plugin 'vim-scripts/paredit.vim'
-Plugin 'ntpeters/vim-better-whitespace'
+Plugin 'tpope/vim-surround'
+
+" JS
+Plugin 'Shutnik/jshint2.vim'
+
+" Elixir
+Plugin 'slashmili/alchemist.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'mattreduce/vim-mix'
+
+" Color schemes
+Plugin 'dracula/vim'
+Plugin 'godlygeek/csapprox'
+Plugin 'jscappini/material.vim'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'bling/vim-airline'
+Plugin 'altercation/vim-colors-solarized'
 
 call vundle#end()
 
