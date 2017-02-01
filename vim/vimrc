@@ -32,7 +32,7 @@ Plugin 'davidhalter/jedi-vim'
 
 " Clojure
 Plugin 'junegunn/limelight.vim'
-Plugin 'venantius/vim-eastwood'
+"Plugin 'venantius/vim-eastwood'
 Plugin 'venantius/vim-cljfmt'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'tpope/vim-fireplace'
