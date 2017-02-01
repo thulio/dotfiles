@@ -12,12 +12,18 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-scripts/ZoomWin'
+Plugin 'bling/vim-bufferline'
+Plugin 'itchyny/lightline.vim'
 
 " Misc programming
 Plugin 'scrooloose/syntastic'
 Plugin 'ctags.vim'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'tpope/vim-fugitive'
+Plugin 'sickill/vim-pasta'
+Plugin 'vim-scripts/tComment'
+Plugin 'airblade/vim-gitgutter'
 
 " Python
 "Plugin 'klen/python-mode'
@@ -47,9 +53,10 @@ Plugin 'mattreduce/vim-mix'
 Plugin 'dracula/vim'
 Plugin 'godlygeek/csapprox'
 Plugin 'jscappini/material.vim'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bling/vim-airline'
+"Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'jdkanani/vim-material-theme'
 
 call vundle#end()
 
@@ -207,6 +214,8 @@ map <leader>T :CtrlPBuffer<cr>
 
 "let g:airline#extensions#syntastic#enabled =1
 "let g:airline#extensions#branch#enabled =1
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_nr_show = 1
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>
