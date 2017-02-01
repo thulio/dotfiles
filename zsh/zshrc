@@ -45,7 +45,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx brew git docker zsh-syntax-highlighting thulio)
+plugins=(brew git docker zsh-syntax-highlighting thulio)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,13 +79,15 @@ setopt HIST_VERIFY               # Don't execute immediately upon history expans
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 if [ "$(uname -s)" = "Linux" ] ; then
-    export TERM=xterm-256color 
+    export TERM=xterm-256color
     export COLORTERM=1
     export PATH=$PATH:$HOME/.pyenv/bin:$HOME/.rbenv/bin:$HOME/.exenv/bin
 fi
 
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv > /dev/null; then pyenv virtualenvwrapper_lazy; fi
+if which pyenv > /dev/null; then
+    eval "$(pyenv init -)";
+    pyenv virtualenvwrapper_lazy;
+fi
 if which exenv > /dev/null; then eval "$(exenv init -)"; fi
 
