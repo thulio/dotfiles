@@ -29,9 +29,11 @@ Plugin 'airblade/vim-gitgutter'
 "Plugin 'klen/python-mode'
 Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
+Plugin 'lepture/vim-jinja'
 
 " Clojure
 Plugin 'junegunn/limelight.vim'
+
 "Plugin 'venantius/vim-eastwood'
 Plugin 'venantius/vim-cljfmt'
 Plugin 'kien/rainbow_parentheses.vim'
