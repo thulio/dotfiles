@@ -45,6 +45,7 @@ Plugin 'tpope/vim-surround'
 
 " JS
 Plugin 'Shutnik/jshint2.vim'
+Plugin 'posva/vim-vue'
 
 " Elixir
 Plugin 'slashmili/alchemist.vim'
