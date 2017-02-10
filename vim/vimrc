@@ -24,6 +24,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'sickill/vim-pasta'
 Plugin 'vim-scripts/tComment'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'chrisbra/csv.vim'
+Plugin 'euclio/gitignore.vim'
 
 " Python
 "Plugin 'klen/python-mode'
@@ -42,7 +44,6 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-classpath.git'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'tpope/vim-surround'
-Plugin 'chrisbra/csv.vim'
 
 " JS
 Plugin 'Shutnik/jshint2.vim'
@@ -223,3 +224,4 @@ map <leader>T :CtrlPBuffer<cr>
 
 " TagBar
 nmap <F8> :TagbarToggle<CR>
+
