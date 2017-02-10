@@ -42,6 +42,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-classpath.git'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'chrisbra/csv.vim'
 
 " JS
 Plugin 'Shutnik/jshint2.vim'
