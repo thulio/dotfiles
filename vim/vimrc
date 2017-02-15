@@ -234,3 +234,7 @@ nmap <F8> :TagbarToggle<CR>
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_github=1
+
+let g:lightline = {
+      \ 'colorscheme': 'Dracula',
+      \ }
