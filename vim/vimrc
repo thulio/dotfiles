@@ -44,6 +44,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-classpath.git'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'tpope/vim-surround'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " JS
 Plugin 'Shutnik/jshint2.vim'
@@ -228,3 +229,8 @@ map <leader>T :CtrlPBuffer<cr>
 " TagBar
 nmap <F8> :TagbarToggle<CR>
 
+
+" Markdown
+let vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_github=1
