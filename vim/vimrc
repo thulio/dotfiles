@@ -15,6 +15,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'bling/vim-bufferline'
 Plugin 'itchyny/lightline.vim'
+Plugin 'jeetsukumaran/vim-buffergator'
 
 " Misc programming
 Plugin 'scrooloose/syntastic'
