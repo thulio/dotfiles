@@ -34,6 +34,8 @@ Plugin 'ervandew/supertab'
 Plugin 'nvie/vim-flake8'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'lepture/vim-jinja'
+Plugin 'alfredodeza/pytest.vim'
+Plugin 'Vimjas/vim-python-pep8-indent'
 
 " Clojure
 Plugin 'junegunn/limelight.vim'
