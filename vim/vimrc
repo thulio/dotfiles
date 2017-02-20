@@ -28,6 +28,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'chrisbra/csv.vim'
 Plugin 'euclio/gitignore.vim'
 Plugin 'ervandew/supertab'
+Plugin 'yggdroot/indentline'
+
 
 " Python
 "Plugin 'klen/python-mode'
