@@ -30,6 +30,8 @@ Plugin 'euclio/gitignore.vim'
 Plugin 'ervandew/supertab'
 Plugin 'yggdroot/indentline'
 
+" Project Management
+Plugin 'thulio/trello-vim'
 
 " Python
 "Plugin 'klen/python-mode'
