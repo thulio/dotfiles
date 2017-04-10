@@ -13,13 +13,10 @@
     interactive = auto
     status = auto
 [alias]
-    #lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     lc = log ORIG_HEAD.. --stat --no-merges
-    # from http://blog.kfish.org/2010/04/git-lola.html
-    lol = log --graph --decorate --pretty=oneline --abbrev-commit
-    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ll = log --graph --date=short
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 
     # from https://git.wiki.kernel.org/index.php/Aliases
     whois = "!sh -c 'git log -i -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
@@ -30,4 +27,20 @@
 
     st = status --short --branch
     pick = cherry-pick --sign-off
+    stash-all = stash save --include-untracked
 
+[merge]
+    ff = only
+    conflictstyle = diff3
+
+#[status]
+#    showUntrackedFiles = all
+
+[diff]
+    tool = icdiff
+
+[difftool]
+    prompt = false
+
+[difftool "icdiff"]
+    cmd = pyenv exec icdiff --line-numbers $LOCAL $REMOTE
