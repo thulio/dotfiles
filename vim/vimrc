@@ -201,3 +201,6 @@ let g:lightline = {
 
 " Supertab
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+" indentline changes conceal
+let g:indentLine_setConceal = 0
