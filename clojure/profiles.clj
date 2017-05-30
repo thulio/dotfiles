@@ -6,5 +6,7 @@
                     [proto-repl "0.3.1"]
                     [jonase/eastwood "0.2.3"]
                     [cider/cider-nrepl "0.14.0"]
-                    [lein-cljfmt "0.5.6"]]}}
+                    [lein-cljfmt "0.5.6"]
+                    [lein-count "1.0.3"]
+                    [venantius/yagni "0.1.4"]]}}
 
