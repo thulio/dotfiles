@@ -1,8 +1,15 @@
 set nocompatible               " be iMproved
 filetype off                   " required!
 
+if has('nvim')
+    let s:editor_root=expand("~/.config/nvim")
+else
+    let s:editor_root=expand("~/.vim")
+endif
+
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+"set rtp+=s:editor_root . '/bundle/Vundle.vim'
+call vundle#begin(s:editor_root . '/bundle')
 
 " let Vundle manage Vundle
 " required!
