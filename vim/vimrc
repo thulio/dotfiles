@@ -79,11 +79,11 @@ Plugin 'jdkanani/vim-material-theme'
 
 call vundle#end()
 
-syntax enable
 set encoding=utf-8
 set number
 set ruler
 filetype plugin indent on       " load file type plugins + indentation
+syntax enable
 
 set t_Co=256
 set background=dark
