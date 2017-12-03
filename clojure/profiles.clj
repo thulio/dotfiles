@@ -8,5 +8,6 @@
                     [cider/cider-nrepl "0.15.0-SNAPSHOT"]
                     [lein-cljfmt "0.5.6"]
                     [lein-count "1.0.8"]
-                    [venantius/yagni "0.1.4"]]}}
+                    [venantius/yagni "0.1.4"]
+                    [lein-bikeshed "0.4.1"]]}}
 
