@@ -189,6 +189,7 @@ let jshint2_save = 1
 " Markdown
 autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
 autocmd FileType markdown set tw=80
+let vim_markdown_preview_github=1
 
 " CtrlP
 map <leader>t :CtrlP<cr>
