@@ -18,13 +18,14 @@ Plugin 'VundleVim/Vundle.vim'
 " Navigation
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
+"Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'bling/vim-bufferline'
 Plugin 'itchyny/lightline.vim'
 Plugin 'jeetsukumaran/vim-buffergator'
 
 " Misc programming
+Plugin 'junegunn/limelight.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'ctags.vim'
 Plugin 'ntpeters/vim-better-whitespace'
@@ -36,6 +37,7 @@ Plugin 'chrisbra/csv.vim'
 Plugin 'euclio/gitignore.vim'
 Plugin 'ervandew/supertab'
 Plugin 'yggdroot/indentline'
+Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " Project Management
 Plugin 'thulio/trello-vim'
@@ -49,17 +51,14 @@ Plugin 'alfredodeza/pytest.vim'
 Plugin 'Vimjas/vim-python-pep8-indent'
 
 " Clojure
-Plugin 'junegunn/limelight.vim'
-
+"Plugin 'guns/vim-clojure-static'
+"Plugin 'tpope/vim-fireplace'
+"Plugin 'vim-scripts/paredit.vim'
 "Plugin 'venantius/vim-eastwood'
-Plugin 'venantius/vim-cljfmt'
+"Plugin 'venantius/vim-cljfmt'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'tpope/vim-fireplace'
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-classpath.git'
-Plugin 'vim-scripts/paredit.vim'
+"Plugin 'tpope/vim-classpath.git'
 Plugin 'tpope/vim-surround'
-Plugin 'JamshedVesuna/vim-markdown-preview'
 
 " JS
 Plugin 'Shutnik/jshint2.vim'
@@ -72,7 +71,7 @@ Plugin 'mattreduce/vim-mix'
 
 " Color schemes
 Plugin 'dracula/vim'
-Plugin 'godlygeek/csapprox'
+"Plugin 'godlygeek/csapprox'
 Plugin 'jscappini/material.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'jdkanani/vim-material-theme'
