@@ -69,6 +69,11 @@ Plugin 'slashmili/alchemist.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'mattreduce/vim-mix'
 
+if has('mac')
+    Plugin 'rizzatti/dash.vim'
+endif
+
+
 " Color schemes
 Plugin 'dracula/vim'
 "Plugin 'godlygeek/csapprox'
