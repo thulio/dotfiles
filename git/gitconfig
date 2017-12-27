@@ -30,6 +30,8 @@
     pick = cherry-pick --sign-off
     stash-all = stash save --include-untracked
 
+    fixup = rebase --autosquash --autostash -i
+
 [merge]
     ff = only
     conflictstyle = diff3
