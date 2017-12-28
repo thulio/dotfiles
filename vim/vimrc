@@ -222,5 +222,13 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " indentline changes conceal
 let g:indentLine_setConceal = 0
 
+if executable('ag')
+  " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
+  set grepprg=ag\ --nogroup\ --nocolor
+  " Use ag in CtrlP for listing files. Lightning fast, respects .gitignore
+  " and .agignore. Ignores hidden files by default.
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -f -g ""'
+endif
+
 " nvim q
 set guicursor=
