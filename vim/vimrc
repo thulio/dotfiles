@@ -157,7 +157,7 @@ noremap <C-e> :Eval <CR>
 noremap E :%Eval <CR>
 
 " GUI
-set guifont=Hack\ 12
+set guifont=Source\ Code\ Pro\ 14
 colorscheme dracula
 
 " Python
