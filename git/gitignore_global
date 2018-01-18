@@ -3,3 +3,5 @@
 .tool-versions
 TAGS
 .dir-locals.el
+.#*
+
