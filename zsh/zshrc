@@ -45,7 +45,15 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew git docker zsh-syntax-highlighting thulio)
+if [ "$(uname 2> /dev/null)" != "Linux" ]; then
+    plugins=(brew git docker zsh-syntax-highlighting thulio)
+else
+    if [ -f /usr/local/bin/scw-metadata ]; then
+        plugins=(git docker zsh-syntax-highlighting ubuntu thulio)
+    else
+        plugins=(git docker zsh-syntax-highlighting archlinux thulio)
+    fi
+fi
 
 source $ZSH/oh-my-zsh.sh
 
