@@ -342,7 +342,6 @@
   (setq org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE" "DELEGATED")))
   (setq org-default-notes-file "~/org/INBOX.org")
   (setq org-projectile-per-project-filepath "TODO.org")
-  (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
   )
 
 (defun dotspacemacs/emacs-custom-settings ()
