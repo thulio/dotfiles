@@ -409,7 +409,8 @@
   (editorconfig-mode 1)
   (org-projectile-per-project)
   (setq org-agenda-files (list "~/org/PERSONAL.org" "~/org/WORK.org" "~/org/INBOX.org"))
-  (setq org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE" "DELEGATED")))
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "DOING(o)" "|" "DONE(d)" "DELEGATED(e)")))
   (setq org-default-notes-file "~/org/INBOX.org")
   (setq org-projectile-per-project-filepath "TODO.org")
   (golden-ratio-mode 1))
