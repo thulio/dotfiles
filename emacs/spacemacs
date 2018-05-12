@@ -412,7 +412,7 @@
   (setq org-todo-keywords '((sequence "TODO" "DOING" "|" "DONE" "DELEGATED")))
   (setq org-default-notes-file "~/org/INBOX.org")
   (setq org-projectile-per-project-filepath "TODO.org")
-  )
+  (golden-ratio-mode 1))
 
 (defun dotspacemacs/emacs-custom-settings ()
   "Emacs custom settings.
