@@ -474,7 +474,8 @@ before packages are loaded."
         '((sequence "TODO(t)" "DOING(o)" "|" "DONE(d)" "DELEGATED(e)")))
   (setq org-default-notes-file "~/org/INBOX.org")
   (setq org-projectile-per-project-filepath "TODO.org")
-  (golden-ratio-mode 1))
+  (golden-ratio-mode 1)
+  (setq pipenv-executable "~/.asdf/shims/pipenv"))
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
