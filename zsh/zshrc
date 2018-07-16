@@ -46,12 +46,12 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 if [ "$(uname 2> /dev/null)" != "Linux" ]; then
-    plugins=(brew git docker zsh-syntax-highlighting kubectl thulio)
+    plugins=(brew git docker zsh-syntax-highlighting thulio)
 else
     if [ -f /usr/local/bin/scw-metadata ]; then
-        plugins=(git docker zsh-syntax-highlighting ubuntu kubectl thulio)
+        plugins=(git docker zsh-syntax-highlighting ubuntu thulio)
     else
-        plugins=(git docker zsh-syntax-highlighting archlinux kubectl thulio)
+        plugins=(git docker zsh-syntax-highlighting archlinux thulio)
     fi
 fi
 
@@ -97,3 +97,8 @@ if [[ -d "${HOME}/.asdf" ]]; then
     . $HOME/.asdf/asdf.sh
     . $HOME/.asdf/completions/asdf.bash
 fi
+
+if  hash kubectl &> /dev/null; then
+	source <(kubectl completion zsh)
+fi
+
