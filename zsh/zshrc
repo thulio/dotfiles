@@ -102,3 +102,10 @@ if  hash kubectl &> /dev/null; then
 	source <(kubectl completion zsh)
 fi
 
+
+if [[ -d "${HOME}/projects/github/kubernetes-tools" ]]; then
+    autoload -U compaudit compinit bashcompinit
+    compaudit && compinit && bashcompinit
+    source ${HOME}/projects/github/kubernetes-tools/completion/__completion
+    export PATH=${PATH}:${HOME}/projects/github/kubernetes-tools/bin
+fi
