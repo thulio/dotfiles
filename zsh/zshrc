@@ -10,25 +10,27 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 if [ -f /usr/local/bin/scw-metadata ]; then
     plugins=(gitfast docker zsh-syntax-highlighting ubuntu thulio)
 else
-    plugins=(gitfast docker zsh-syntax-highlighting brew thulio)
+    plugins=(gitfast docker zsh-syntax-highlighting brew mix-fast thulio)
 fi
 
 source $ZSH/oh-my-zsh.sh
 
-autoload -Uz compinit
-if [[ -f /usr/local/bin/gdate ]]; then
-    if [ $(/usr/local/bin/gdate -d @$(/usr/local/bin/gstat -c%Y ${HOME}/.zcompdump) +"%Y%m%d") != $(/usr/local/bin/gdate +"%Y%m%d") ]; then
-      compinit
-    else
-      compinit -C
-    fi
-else
-    if [ $(date -d @$(stat -c%Y ${HOME}/.zcompdump) +"%Y%m%d") != $(date +"%Y%m%d") ]; then
-      compinit
-    else
-      compinit -C
-    fi
-fi
+#autoload -Uz compinit
+#compinit
+#compinit -C
+#if [[ -f /usr/local/bin/gdate ]]; then
+#    if [ $(/usr/local/bin/gdate -d @$(/usr/local/bin/gstat -c%Y ${HOME}/.zcompdump) +"%Y%m%d") != $(/usr/local/bin/gdate +"%Y%m%d") ]; then
+#      compinit
+#    else
+#      compinit -C
+#    fi
+#else
+#    if [ $(date -d @$(stat -c%Y ${HOME}/.zcompdump) +"%Y%m%d") != $(date +"%Y%m%d") ]; then
+#      compinit
+#    else
+#      compinit -C
+#    fi
+#fi
 
 export EDITOR='vim'
 export PATH=/usr/local/bin:$PATH:$JAVA_HOME/bin:/usr/bin/vendor_perl:$HOME/bin

@@ -7,3 +7,4 @@ TAGS
 .elixir_ls
 TODOs.org
 .DS_Store
+.mix_tasks
