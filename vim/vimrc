@@ -1,5 +1,5 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible
+filetype off
 
 if has('nvim')
     let s:editor_root=expand("~/.config/nvim")
@@ -7,107 +7,72 @@ else
     let s:editor_root=expand("~/.vim")
 endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-"set rtp+=s:editor_root . '/bundle/Vundle.vim'
-call vundle#begin(s:editor_root . '/bundle')
+call plug#begin(s:editor_root . '/plugged')
 
-" let Vundle manage Vundle
-" required!
-Plugin 'VundleVim/Vundle.vim'
-
-" Navigation
-Plugin 'kien/ctrlp.vim'
-Plugin 'majutsushi/tagbar'
-"Plugin 'scrooloose/nerdtree'
-Plugin 'vim-scripts/ZoomWin'
-Plugin 'bling/vim-bufferline'
-Plugin 'itchyny/lightline.vim'
-Plugin 'jeetsukumaran/vim-buffergator'
+" Navigation & UI
+Plug 'kien/ctrlp.vim'
+Plug 'wsdjeg/FlyGrep.vim'
+Plug 'vim-airline/vim-airline'
 
 " Misc programming
-Plugin 'junegunn/limelight.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'ctags.vim'
-Plugin 'ntpeters/vim-better-whitespace'
-Plugin 'tpope/vim-fugitive'
-Plugin 'sickill/vim-pasta'
-Plugin 'vim-scripts/tComment'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'chrisbra/csv.vim'
-Plugin 'euclio/gitignore.vim'
-Plugin 'ervandew/supertab'
-Plugin 'yggdroot/indentline'
-Plugin 'JamshedVesuna/vim-markdown-preview'
-
-" Project Management
-Plugin 'thulio/trello-vim'
+Plug 'scrooloose/syntastic'
+Plug 'vim-scripts/ctags.vim'
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'chrisbra/csv.vim'
+Plug 'euclio/gitignore.vim'
+Plug 'yggdroot/indentline'
+Plug 'janko/vim-test'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
+Plug 'majutsushi/tagbar'
+" Words in buffer completion
+Plug 'ncm2/ncm2-bufword'
+" Filepath completion
+Plug 'ncm2/ncm2-path'
+Plug 'tpope/vim-commentary'
+Plug 'neomake/neomake'
+Plug 'sbdchd/neoformat'
 
 " Python
-"Plugin 'klen/python-mode'
-Plugin 'nvie/vim-flake8'
-Plugin 'davidhalter/jedi-vim'
-Plugin 'lepture/vim-jinja'
-Plugin 'alfredodeza/pytest.vim'
-Plugin 'Vimjas/vim-python-pep8-indent'
-
-" Clojure
-"Plugin 'guns/vim-clojure-static'
-"Plugin 'tpope/vim-fireplace'
-"Plugin 'vim-scripts/paredit.vim'
-"Plugin 'venantius/vim-eastwood'
-"Plugin 'venantius/vim-cljfmt'
-Plugin 'kien/rainbow_parentheses.vim'
-"Plugin 'tpope/vim-classpath.git'
-Plugin 'tpope/vim-surround'
-
-" JS
-Plugin 'Shutnik/jshint2.vim'
-Plugin 'posva/vim-vue'
+Plug 'davidhalter/jedi-vim'
+" Fast python completion (use ncm2 if you want type info or snippet support)
+Plug 'HansPinckaers/ncm2-jedi'
+Plug 'tweekmonster/impsort.vim'
 
 " Elixir
-Plugin 'slashmili/alchemist.vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'mattreduce/vim-mix'
-
-if has('mac')
-    Plugin 'rizzatti/dash.vim'
-endif
-
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-lang/vim-elixir'
+Plug 'mattreduce/vim-mix'
 
 " Color schemes
-Plugin 'dracula/vim'
-"Plugin 'godlygeek/csapprox'
-Plugin 'jscappini/material.vim'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'jdkanani/vim-material-theme'
+Plug 'dracula/vim'
 
-call vundle#end()
+call plug#end()
 
 set encoding=utf-8
 set number
 set ruler
-filetype plugin indent on       " load file type plugins + indentation
+filetype plugin indent on
 syntax enable
 
 set t_Co=256
 set background=dark
 
 " Whitespace
-set nowrap                      " don't wrap lines
-set tabstop=4 shiftwidth=4      " a tab is two spaces (or set this to 4)
-set expandtab                   " use spaces, not tabs (optional)
-set backspace=indent,eol,start  " backspace through everything in insert mode
+set nowrap
+set tabstop=4 shiftwidth=4
+set expandtab
+set backspace=indent,eol,start
 set list listchars=tab:\ \ ,trail:·
 
 " Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 " Tab completion
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,*.class,.svn,vendor/gems/*
 
 " Status bar
 set laststatus=2
@@ -128,13 +93,6 @@ vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+p
-
-" NERDTree
-noremap <Leader>n :NERDTreeToggle<CR>
-
-" Ignore long lines error
-let g:pep8_ignore="E501,W601"
-let g:flake8_ignore="E501"
 
 " Move Backup Files to ~/.vim/sessions
 set backupdir=~/.vim/sessions
@@ -157,48 +115,8 @@ noremap <C-e> :Eval <CR>
 noremap E :%Eval <CR>
 
 " GUI
-set guifont=Source\ Code\ Pro\ 14
+set guifont=Fira\ Code:h14
 colorscheme dracula
-
-" Python
-if has('mac')
-    let g:python_host_prog = '/Users/thulio/.asdf/installs/python/3.6.3/bin/python'
-    let g:python3_host_prog = '/Users/thulio/.asdf/installs/python/2.7.14/bin/python'
-else
-    let g:python_host_prog = '/home/thulio/.asdf/installs/python/3.6.3/bin/python'
-    let g:python3_host_prog = '/home/thulio/.asdf/installs/python/2.7.14/bin/python'
-endif
-
-" Clojure
-au Filetype clojure nmap <c-c><c-k> :Require<cr>
-
-function! TestToplevel() abort
-    "Eval the toplevel clojure form (a deftest) and then test-var the result."
-    normal! ^
-    let line1 = searchpair('(','',')', 'bcrn', g:fireplace#skip)
-    let line2 = searchpair('(','',')', 'rn', g:fireplace#skip)
-    let expr = join(getline(line1, line2), "\n")
-    let var = fireplace#session_eval(expr)
-    let result = fireplace#echo_session_eval("(clojure.test/test-var " . var . ")")
-    return result
-endfunction
-
-au Filetype clojure nmap <c-c><c-t> :call TestToplevel()<cr>
-
-let g:clj_fmt_autosave = 0
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-" JS
-let jshint2_save = 1
-
-" Markdown
-autocmd BufNewFile,BufReadPost *.md,*.markdown set filetype=markdown
-autocmd FileType markdown set tw=80
-let vim_markdown_preview_github=1
 
 " CtrlP
 map <leader>t :CtrlP<cr>
@@ -212,23 +130,31 @@ let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_github=1
 
-let g:lightline = {
-      \ 'colorscheme': 'dracula',
-      \ }
-
-" Supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 " indentline changes conceal
 let g:indentLine_setConceal = 0
 
-if executable('ag')
-  " Use The Silver Searcher https://github.com/ggreer/the_silver_searcher
-  set grepprg=ag\ --nogroup\ --nocolor
-  " Use ag in CtrlP for listing files. Lightning fast, respects .gitignore
-  " and .agignore. Ignores hidden files by default.
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -f -g ""'
-endif
-
 " nvim q
 set guicursor=
+
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" enable ncm2 for all buffers
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" IMPORTANT: :help Ncm2PopupOpen for more information
+set completeopt=noinsert,menuone,noselect
+
+let g:jedi#auto_initialization = 1
+let g:jedi#completions_enabled = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#smart_auto_mappings = 0
+let g:jedi#popup_on_dot = 0
+let g:jedi#completions_command = ""
+let g:jedi#show_call_signatures = "1"
+
+let g:neomake_python_enabled_makers = ['pylint', 'bandit']
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
