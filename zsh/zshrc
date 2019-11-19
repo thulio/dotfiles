@@ -38,6 +38,7 @@ export GOPATH=$HOME/go
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 export WORKON_HOME=~/.virtualenvs/
 
 setopt BANG_HIST                 # Treat the '!' character specially during expansion.
