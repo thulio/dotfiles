@@ -4,7 +4,7 @@
 [push]
     default = tracking
 [core]
-    editor = vim
+    editor = nvim
     pager = less -r
 	excludesfile = ~/.gitignore_global
 [color]
