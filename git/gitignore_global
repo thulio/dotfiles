@@ -8,3 +8,13 @@ TAGS
 TODOs.org
 .DS_Store
 .mix_tasks
+
+_build
+cover
+deps
+doc
+.fetch
+erl_crash.dump
+*.ez
+*.beam
+.projections.json

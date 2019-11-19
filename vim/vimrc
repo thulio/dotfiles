@@ -32,6 +32,8 @@ Plug 'ncm2/ncm2-path'
 Plug 'tpope/vim-commentary'
 Plug 'neomake/neomake'
 Plug 'sbdchd/neoformat'
+Plug 'ervandew/supertab'
+Plug 'tpope/vim-projectionist'
 
 " Python
 Plug 'davidhalter/jedi-vim'
@@ -158,3 +160,4 @@ augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
 augroup END
+
