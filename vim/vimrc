@@ -9,43 +9,36 @@ endif
 
 call plug#begin(s:editor_root . '/plugged')
 
-" Navigation & UI
-Plug 'kien/ctrlp.vim'
-Plug 'wsdjeg/FlyGrep.vim'
-Plug 'vim-airline/vim-airline'
-
-" Misc programming
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'junegunn/fzf'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tpope/vim-projectionist'
+Plug 'euclio/gitignore.vim'
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/ctags.vim'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'chrisbra/csv.vim'
-Plug 'euclio/gitignore.vim'
-Plug 'yggdroot/indentline'
-Plug 'janko/vim-test'
-Plug 'ncm2/ncm2'
-Plug 'roxma/nvim-yarp'
 Plug 'majutsushi/tagbar'
-" Words in buffer completion
-Plug 'ncm2/ncm2-bufword'
-" Filepath completion
-Plug 'ncm2/ncm2-path'
-Plug 'tpope/vim-commentary'
-Plug 'neomake/neomake'
-Plug 'sbdchd/neoformat'
+Plug 'fisadev/vim-isort'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'ervandew/supertab'
-Plug 'tpope/vim-projectionist'
-
-" Python
-Plug 'davidhalter/jedi-vim'
-" Fast python completion (use ncm2 if you want type info or snippet support)
-Plug 'HansPinckaers/ncm2-jedi'
-Plug 'tweekmonster/impsort.vim'
-
-" Elixir
-Plug 'slashmili/alchemist.vim'
-Plug 'elixir-lang/vim-elixir'
+Plug 'tpope/vim-commentary'
 Plug 'mattreduce/vim-mix'
-
+Plug 'yggdroot/indentline'
+Plug 'majutsushi/tagbar'
+Plug 'janko/vim-test'
+Plug 'chrisbra/csv.vim'
+Plug 'vim-scripts/ctags.vim'
+Plug 'wsdjeg/FlyGrep.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'elixir-editors/vim-elixir'
+Plug 'rust-lang/rust.vim'
+Plug 'vim-scripts/bufexplorer.zip'
+Plug 'vim-scripts/mru.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 " Color schemes
 Plug 'dracula/vim'
 
@@ -91,7 +84,7 @@ cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
 " Clipboard
 imap <buffer><Tab> <C-Space>
-vmap <C-c> "+yi
+vmap <C-c> "+y
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
 imap <C-v> <ESC>"+p
@@ -120,49 +113,101 @@ noremap E :%Eval <CR>
 set guifont=Fira\ Code:h14
 colorscheme dracula
 
-" CtrlP
-map <leader>t :CtrlP<cr>
-map <leader>T :CtrlPBuffer<cr>
-
-" TagBar
-nmap <F8> :TagbarToggle<CR>
-
-" Markdown
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_browser='Google Chrome'
-let vim_markdown_preview_github=1
-
 " indentline changes conceal
 let g:indentLine_setConceal = 0
 
 " nvim q
 set guicursor=
 
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+map <leader>t :CtrlP<cr>
+map <leader>T :CtrlPBuffer<cr>
 
-" enable ncm2 for all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
+nmap <F8> :TagbarToggle<CR>
 
-" IMPORTANT: :help Ncm2PopupOpen for more information
-set completeopt=noinsert,menuone,noselect
-
-let g:jedi#auto_initialization = 1
-let g:jedi#completions_enabled = 0
-let g:jedi#auto_vim_configuration = 0
-let g:jedi#smart_auto_mappings = 0
-let g:jedi#popup_on_dot = 0
-let g:jedi#completions_command = ""
-let g:jedi#show_call_signatures = "1"
-
-let g:neomake_python_enabled_makers = ['pylint', 'bandit']
-
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
-
-let g:python3_host_prog='/Users/thulio/.asdf/installs/python/3.7.5/bin/python'
+let g:python3_host_prog='/Users/thulio/.asdf/installs/python/3.7.6/bin/python'
 let g:python_host_prog='/Users/thulio/.asdf/installs/python/2.7.17/bin/python'
 
-let g:neoformat_enabled_python = ['isort', 'black']
-let g:neoformat_run_all_formatters = 1
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'python': ['~/.asdf/installs/python/3.7.6/bin/pyls'],
+    \ 'rust': ['~/.asdf/shims/rustup', 'run', 'stable', 'rls'],
+    \ 'elixir': ['~/projects/github/elixir-ls/release/language_server.sh'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition({'gotoCmd': 'split'})<CR>
+nnoremap <silent> gvd :call LanguageClient#textDocument_definition({'gotoCmd': 'vsplit'})<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+autocmd BufWritePre *.ex,*.exs,*.py :call LanguageClient#textDocument_formatting_sync()
+
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+let g:projectionist_heuristics = {}
+
+let g:projectionist_heuristics['mix.exs'] = {
+            \ 'apps/*/mix.exs': { 'type': 'app' },
+            \ 'lib/*.ex': {
+            \   'type': 'lib',
+            \   'alternate': 'test/{}_test.exs',
+            \   'template': ['defmodule {camelcase|capitalize|dot} do', 'end'],
+            \ },
+            \ 'test/*_test.exs': {
+            \   'type': 'test',
+            \   'alternate': 'lib/{}.ex',
+            \   'template': [
+            \       'defmodule {camelcase|capitalize|dot}Test do',
+            \       '  use ExUnit.Case',
+            \       '',
+            \       '  alias {camelcase|capitalize|dot}, as: Subject',
+            \       '',
+            \       '  doctest Subject',
+            \       'end'
+            \   ],
+            \ },
+            \ 'mix.exs': { 'type': 'mix' },
+            \ 'config/*.exs': { 'type': 'config' },
+            \ '*.ex': {
+            \   'makery': {
+            \     'lint': { 'compiler': 'credo' },
+            \     'test': { 'compiler': 'exunit' },
+            \     'build': { 'compiler': 'mix' }
+            \   }
+            \ },
+            \ '*.exs': {
+            \   'makery': {
+            \     'lint': { 'compiler': 'credo' },
+            \     'test': { 'compiler': 'exunit' },
+            \     'build': { 'compiler': 'mix' }
+            \   }
+            \ }
+            \ }
+
+let g:projectionist_heuristics['rebar.config'] = {
+            \ '*.erl': {
+            \   'template': ['-module({basename}).', '', '-export([]).', ''],
+            \ },
+            \ 'src/*.app.src': { 'type': 'app' },
+            \ 'src/*.erl': {
+            \   'type': 'src',
+            \   'alternate': 'test/{}_SUITE.erl',
+            \ },
+            \ 'test/*_SUITE.erl': {
+            \   'type': 'test',
+            \   'alternate': 'src/{}.erl',
+            \ },
+            \ 'rebar.config': { 'type': 'rebar' }
+            \ }
+
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+" augroup ProjectDrawer
+"   autocmd!
+"   autocmd VimEnter * :Vexplore
+" augroup END
