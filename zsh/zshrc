@@ -10,7 +10,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 if [ -f /usr/local/bin/scw-metadata ]; then
     plugins=(git docker zsh-syntax-highlighting ubuntu thulio)
 else
-    plugins=(git docker zsh-syntax-highlighting brew mix-fast thulio)
+    plugins=(git docker zsh-syntax-highlighting brew thulio)
 fi
 
 source $ZSH/oh-my-zsh.sh
