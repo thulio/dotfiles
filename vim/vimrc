@@ -365,4 +365,6 @@ let g:startify_lists = [
           \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
           \ { 'type': 'commands',  'header': ['   Commands']       },
           \ ]
+let g:ascii = ['neovim']
+let g:startify_custom_header = 'startify#pad(g:ascii)'
 let g:bufferline_echo = 0
