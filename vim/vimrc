@@ -42,6 +42,7 @@ Plug 'junegunn/limelight.vim'
 Plug 'bling/vim-bufferline'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf.vim'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'tpope/vim-vinegar'
 "Plug 'airblade/vim-rooter'
 " Color schemes
@@ -369,3 +370,5 @@ let g:startify_lists = [
 let g:ascii = ['neovim']
 let g:startify_custom_header = 'startify#pad(g:ascii)'
 let g:bufferline_echo = 0
+
+let g:mkdp_auto_close = 0
