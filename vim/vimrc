@@ -113,7 +113,6 @@ set mat=2
 let g:tagbar_autofocus = 0
 
 " GUI
-set guifont=Fira\ Code:h14
 colorscheme dracula
 
 " indentline changes conceal
@@ -372,3 +371,12 @@ let g:startify_custom_header = 'startify#pad(g:ascii)'
 let g:bufferline_echo = 0
 
 let g:mkdp_auto_close = 0
+
+if exists('g:vv')
+  VVset windowheight=100%
+  VVset windowwidth=100%
+  VVset fontfamily=Fira\ Code
+  VVset fontsize=14
+  VVset reloadchanged=1
+  VVset quitoncloselastwindow=1
+endif
