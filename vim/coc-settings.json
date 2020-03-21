@@ -15,6 +15,7 @@
   // elixir
   "elixir.pathToElixirLS": "~/projects/github/elixir-ls/release/language_server.sh",
   "elixirLS.suggestSpecs": true,
+  "elixirLS.mixEnv": "dev",
   // xml
   "xml.java.home": "/Library/Java/JavaVirtualMachines/openjdk-13.0.2.jdk/Contents/Home",
   // misc
