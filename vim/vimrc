@@ -16,7 +16,6 @@ Plug 'tpope/vim-projectionist'
 Plug 'euclio/gitignore.vim'
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/ctags.vim'
-Plug 'majutsushi/tagbar'
 Plug 'fisadev/vim-isort'
 Plug 'ntpeters/vim-better-whitespace'
 "Plug 'ervandew/supertab'
@@ -44,6 +43,9 @@ Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'tpope/vim-vinegar'
+Plug 'igemnace/vim-makery'
+Plug 'tpope/vim-dispatch'
+Plug 'preservim/nerdtree'
 "Plug 'airblade/vim-rooter'
 " Color schemes
 Plug 'dracula/vim'
@@ -110,8 +112,6 @@ set showmatch
 " How many tenths of a second to blink when matching brackets
 set mat=2
 
-let g:tagbar_autofocus = 0
-
 " GUI
 colorscheme dracula
 
@@ -128,7 +128,7 @@ command! -bang -nargs=? -complete=dir Files
 
 map <c-p> :Files<cr>
 
-nmap <F8> :TagbarToggle<CR>
+nmap <F8> :Vista!!<CR>
 
 let g:python3_host_prog='/Users/thulio/.asdf/installs/python/3.7.7/bin/python'
 let g:python_host_prog='/Users/thulio/.asdf/installs/python/2.7.17/bin/python'
@@ -351,6 +351,9 @@ set statusline+=%{NearestMethodOrFunction()}
 autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
 let g:vista#renderer#enable_icon = 1
 let g:vista_default_executive = 'coc'
+let g:vista_fzf_preview = ['right:50%']
+let g:vista_sidebar_width = 50
+let g:vista_stay_on_open = 1
 
 "terminal
 tnoremap <Esc> <C-\><C-n>
@@ -380,3 +383,10 @@ if exists('g:vv')
   VVset reloadchanged=1
   VVset quitoncloselastwindow=1
 endif
+
+let g:csv_start = 1
+let g:csv_end = 100
+
+nmap <leader>pf :NERDTreeFind <cr>
+nmap <leader>pf :NERDTreeFind <cr>
+nmap <leader>p :NERDTreeToggle <cr>
