@@ -69,16 +69,6 @@ if [[ -d "${HOME}/.asdf" ]]; then
     . $HOME/.asdf/completions/asdf.bash
 fi
 
-if  hash kubectl &> /dev/null; then
-	source <(kubectl completion zsh)
-fi
-
-if [[ -d "${HOME}/projects/github/kubernetes-tools" ]]; then
-    source ${HOME}/projects/github/kubernetes-tools/completion/__completion
-    export PATH=${PATH}:${HOME}/projects/github/kubernetes-tools/bin
-fi
-
-
 if [[ -f /usr/local/etc/profile.d/z.sh ]]; then
       . /usr/local/etc/profile.d/z.sh
 fi
