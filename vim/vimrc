@@ -390,3 +390,4 @@ let g:csv_end = 100
 nmap <leader>pf :NERDTreeFind <cr>
 nmap <leader>pf :NERDTreeFind <cr>
 nmap <leader>p :NERDTreeToggle <cr>
+nmap <leader>b :BufExplorerVerticalSplit<cr>
