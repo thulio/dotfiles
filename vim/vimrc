@@ -46,6 +46,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'igemnace/vim-makery'
 Plug 'tpope/vim-dispatch'
 Plug 'preservim/nerdtree'
+Plug 'junegunn/vim-easy-align'
 "Plug 'airblade/vim-rooter'
 " Color schemes
 Plug 'dracula/vim'
