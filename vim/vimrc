@@ -51,6 +51,7 @@ Plug 'sheerun/vim-polyglot'
 "Plug 'airblade/vim-rooter'
 " Color schemes
 Plug 'dracula/vim'
+Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 
 call plug#end()
 
@@ -115,7 +116,8 @@ set showmatch
 set mat=2
 
 " GUI
-colorscheme dracula
+" colorscheme dracula
+colorscheme challenger_deep
 
 " indentline changes conceal
 let g:indentLine_setConceal = 0
