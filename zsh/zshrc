@@ -40,7 +40,7 @@ source $ZSH/oh-my-zsh.sh
 #    fi
 #fi
 
-export EDITOR='vim'
+export EDITOR='nvim'
 export PATH=/usr/local/bin:$PATH:$JAVA_HOME/bin:/usr/bin/vendor_perl:$HOME/bin
 export GOPATH=$HOME/go
 export LC_ALL=en_US.UTF-8
