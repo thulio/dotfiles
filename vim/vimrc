@@ -382,12 +382,13 @@ let g:bufferline_echo = 0
 let g:mkdp_auto_close = 0
 
 if exists('g:vv')
-  VVset windowheight=100%
-  VVset windowwidth=100%
-  VVset fontfamily=Fira\ Code
-  VVset fontsize=14
-  VVset reloadchanged=1
-  VVset quitoncloselastwindow=1
+    let g:webdevicons_enable = 0
+    VVset windowheight=100%
+    VVset windowwidth=100%
+    VVset fontfamily=Fira\ Code
+    VVset fontsize=14
+    VVset reloadchanged=1
+    VVset quitoncloselastwindow=1
 endif
 
 let g:csv_start = 1
