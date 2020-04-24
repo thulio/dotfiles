@@ -48,6 +48,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
 "Plug 'airblade/vim-rooter'
 " Color schemes
