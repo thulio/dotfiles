@@ -48,6 +48,7 @@ Plug 'tpope/vim-dispatch'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot'
+Plug 'justinmk/vim-sneak'
 "Plug 'airblade/vim-rooter'
 " Color schemes
 Plug 'dracula/vim'
@@ -397,3 +398,5 @@ let g:csv_end = 100
 nmap <leader>pf :NERDTreeFind <cr>
 nmap <leader>p :NERDTreeToggle <cr>
 nmap <leader>b :BufExplorerVerticalSplit<cr>
+
+let g:sneak#label = 1
