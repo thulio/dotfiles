@@ -28,7 +28,6 @@ npm install \
     coc-rls \
     coc-elixir \
     coc-python \
-    coc-word \
     coc-css \
     coc-eslint \
     coc-xml \
