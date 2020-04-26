@@ -49,8 +49,7 @@ Plug 'preservim/nerdtree'
 Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
-Plug 'justinmk/vim-sneak'
-"Plug 'airblade/vim-rooter'
+Plug 'easymotion/vim-easymotion'
 " Color schemes
 Plug 'dracula/vim'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
@@ -401,3 +400,28 @@ nmap <leader>p :NERDTreeToggle <cr>
 nmap <leader>b :BufExplorerVerticalSplit<cr>
 
 let g:sneak#label = 1
+
+" <Leader>f{char} to move to {char} (overwin)
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char} (overwin)
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line (overwin)
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word (overwin)
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+" Search with vim-easymotion
+map  / <Plug>(easymotion-sn)
+omap / <Plug>(easymotion-tn)
+
+" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
+" Without these mappings, `n` & `N` works fine. (These mappings just provide
+" different highlight method and have some other features )
+map  n <Plug>(easymotion-next)
+map  N <Plug>(easymotion-prev)
