@@ -53,7 +53,9 @@ Plug 'easymotion/vim-easymotion'
 " Color schemes
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'ryanoasis/vim-devicons'
-
+Plug 'haishanh/night-owl.vim'
+Plug 'ajmwagar/vim-deus'
+Plug 'wadackel/vim-dogrun'
 call plug#end()
 
 set encoding=utf-8
@@ -119,6 +121,9 @@ set mat=2
 
 " GUI
 colorscheme challenger_deep
+"colorscheme night-owl
+"colorscheme deus
+"colorscheme dogrun
 
 " indentline changes conceal
 let g:indentLine_setConceal = 0
