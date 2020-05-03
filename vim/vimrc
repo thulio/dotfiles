@@ -48,6 +48,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-fugitive'
 Plug 'jtratner/vim-flavored-markdown'
 Plug 'wellle/targets.vim'
+Plug 'kassio/neoterm'
 " Color schemes
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'ryanoasis/vim-devicons'
