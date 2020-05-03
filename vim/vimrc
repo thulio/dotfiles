@@ -11,17 +11,13 @@ call plug#begin(s:editor_root . '/plugged')
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf'
-" Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tpope/vim-projectionist'
 Plug 'euclio/gitignore.vim'
 Plug 'scrooloose/syntastic'
 Plug 'vim-scripts/ctags.vim'
 Plug 'fisadev/vim-isort'
 Plug 'ntpeters/vim-better-whitespace'
-"Plug 'ervandew/supertab'
-Plug 'tpope/vim-commentary'
 Plug 'mattreduce/vim-mix'
-Plug 'yggdroot/indentline'
 Plug 'janko/vim-test'
 Plug 'chrisbra/csv.vim'
 Plug 'vim-scripts/ctags.vim'
@@ -42,7 +38,6 @@ Plug 'bling/vim-bufferline'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'tpope/vim-vinegar'
 Plug 'igemnace/vim-makery'
 Plug 'tpope/vim-dispatch'
 Plug 'preservim/nerdtree'
@@ -125,9 +120,6 @@ colorscheme challenger_deep
 "colorscheme night-owl
 "colorscheme deus
 "colorscheme dogrun
-
-" indentline changes conceal
-let g:indentLine_setConceal = 0
 
 " nvim q
 set guicursor=
@@ -336,16 +328,6 @@ let g:projectionist_heuristics['rebar.config'] = {
             \ 'rebar.config': { 'type': 'rebar' }
             \ }
 
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-" augroup ProjectDrawer
-"   autocmd!
-"   autocmd VimEnter * :Vexplore
-" augroup END
-"
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
@@ -386,16 +368,6 @@ let g:bufferline_echo = 0
 
 let g:mkdp_auto_close = 0
 
-if exists('g:vv')
-    let g:webdevicons_enable = 0
-    VVset windowheight=100%
-    VVset windowwidth=100%
-    VVset fontfamily=Fira\ Code
-    VVset fontsize=14
-    VVset reloadchanged=1
-    VVset quitoncloselastwindow=1
-endif
-
 let g:csv_start = 1
 let g:csv_end = 100
 
@@ -403,7 +375,6 @@ nmap <leader>pf :NERDTreeFind <cr>
 nmap <leader>p :NERDTreeToggle <cr>
 nmap <leader>b :BufExplorerVerticalSplit<cr>
 
-let g:sneak#label = 1
 
 " <Leader>f{char} to move to {char} (overwin)
 map  <Leader>f <Plug>(easymotion-bd-f)
