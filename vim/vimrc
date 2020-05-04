@@ -7,54 +7,57 @@ else
     let s:editor_root=expand("~/.vim")
 endif
 
-call plug#begin(s:editor_root . '/plugged')
+" configure python for neovim plugin
+let g:python3_host_prog='/Users/thulio/.asdf/installs/python/3.8.2/bin/python'
+let g:python_host_prog='/Users/thulio/.asdf/installs/python/2.7.18/bin/python'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" vim-plug plugins
+call plug#begin(s:editor_root . '/plugged')
+" navigation
 Plug 'junegunn/fzf'
-Plug 'tpope/vim-projectionist'
-Plug 'euclio/gitignore.vim'
-Plug 'scrooloose/syntastic'
-Plug 'vim-scripts/ctags.vim'
-Plug 'fisadev/vim-isort'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'mattreduce/vim-mix'
-Plug 'janko/vim-test'
-Plug 'chrisbra/csv.vim'
-Plug 'vim-scripts/ctags.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'wsdjeg/FlyGrep.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'elixir-editors/vim-elixir'
-Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/bufexplorer.zip'
+Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/mru.vim'
-Plug 'junegunn/goyo.vim'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive'
-Plug 'hyhugh/coc-erlang_ls', {'do': 'yarn install --frozen-lockfile'}
-Plug 'liuchengxu/vista.vim'
-Plug 'vim-python/python-syntax'
-Plug 'junegunn/limelight.vim'
+Plug 'euclio/gitignore.vim'
+Plug 'vim-scripts/ctags.vim'
 Plug 'bling/vim-bufferline'
 Plug 'mhinz/vim-startify'
-Plug 'junegunn/fzf.vim'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'igemnace/vim-makery'
-Plug 'tpope/vim-dispatch'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/vim-easy-align'
-Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
-Plug 'tpope/vim-fugitive'
-Plug 'jtratner/vim-flavored-markdown'
+Plug 'liuchengxu/vim-which-key'
 Plug 'wellle/targets.vim'
-Plug 'kassio/neoterm'
-" Color schemes
+Plug 'liuchengxu/vista.vim'
+" languages
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'chrisbra/csv.vim'
+Plug 'tpope/vim-commentary'
+Plug 'hyhugh/coc-erlang_ls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'elixir-editors/vim-elixir'
+Plug 'rust-lang/rust.vim'
+Plug 'scrooloose/syntastic'
+Plug 'vim-python/python-syntax'
+Plug 'sheerun/vim-polyglot'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'jtratner/vim-flavored-markdown'
+" colorscheme & UI
+Plug 'vim-airline/vim-airline'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'haishanh/night-owl.vim'
 Plug 'ajmwagar/vim-deus'
 Plug 'wadackel/vim-dogrun'
+Plug 'ntpeters/vim-better-whitespace'
+" tools
+Plug 'fisadev/vim-isort'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/limelight.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'kassio/neoterm'
 call plug#end()
 
 set encoding=utf-8
@@ -89,14 +92,11 @@ set laststatus=2
 " Show (partial) command in the status line
 set showcmd
 
-" use comma as <Leader> key instead of backslash
-" let mapleader=","
-
 " double percentage sign in command mode is expanded
 " to directory of current file - http://vimcasts.org/e/14
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 
-" Clipboard
+" ctrl+c ctrl+v
 imap <buffer><Tab> <C-Space>
 vmap <C-c> "+y
 vmap <C-x> "+c
@@ -107,7 +107,7 @@ imap <C-v> <ESC>"+p
 set backupdir=~/.vim/sessions
 set dir=~/.vim/sessions
 
-" No annoying sound on errors
+" Disable bells
 set noerrorbells
 set novisualbell
 set t_vb=
@@ -120,9 +120,6 @@ set mat=2
 
 " GUI
 colorscheme challenger_deep
-"colorscheme night-owl
-"colorscheme deus
-"colorscheme dogrun
 
 " nvim q
 set guicursor=
@@ -131,21 +128,11 @@ set guicursor=
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-
 map <c-p> :Files<cr>
 
-nmap <F8> :Vista!!<CR>
-
-let g:python3_host_prog='/Users/thulio/.asdf/installs/python/3.8.2/bin/python'
-let g:python_host_prog='/Users/thulio/.asdf/installs/python/2.7.18/bin/python'
-
-" coc.vim: start
+" coc.vim - Language Servers
 " if hidden is not set, TextEdit might fail.
 set hidden
-
-" Some servers have issues with backup files, see #649
-set nobackup
-set nowritebackup
 
 " Better display for messages
 set cmdheight=2
@@ -243,14 +230,8 @@ xmap <silent> <TAB> <Plug>(coc-range-select)
 " Use `:Format` to format current buffer
 command! -nargs=0 Format :call CocAction('format')
 
-" Use `:Fold` to fold current buffer
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
-
 " use `:OR` for organize import of current buffer
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
-
-" Add status line support, for integration with other plugin, checkout `:h coc-status`
-set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
 " Using CocList
 " Show all diagnostics
@@ -271,90 +252,15 @@ nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
 " CodeLens action (ex.: insert @spec)
 nnoremap <silent> <space>l  :call  CocActionAsync('codeLensAction')<CR>
-" coc.vim: end
 
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-let g:projectionist_heuristics = {}
-
-let g:projectionist_heuristics['mix.exs'] = {
-            \ 'apps/*/mix.exs': { 'type': 'app' },
-            \ 'lib/*.ex': {
-            \   'type': 'lib',
-            \   'alternate': 'test/{}_test.exs',
-            \   'template': ['defmodule {camelcase|capitalize|dot} do', 'end'],
-            \ },
-            \ 'test/*_test.exs': {
-            \   'type': 'test',
-            \   'alternate': 'lib/{}.ex',
-            \   'template': [
-            \       'defmodule {camelcase|capitalize|dot}Test do',
-            \       '  use ExUnit.Case',
-            \       '',
-            \       '  alias {camelcase|capitalize|dot}, as: Subject',
-            \       '',
-            \       '  doctest Subject',
-            \       'end'
-            \   ],
-            \ },
-            \ 'mix.exs': { 'type': 'mix' },
-            \ 'config/*.exs': { 'type': 'config' },
-            \ '*.ex': {
-            \   'makery': {
-            \     'lint': { 'compiler': 'credo' },
-            \     'test': { 'compiler': 'exunit' },
-            \     'build': { 'compiler': 'mix' }
-            \   }
-            \ },
-            \ '*.exs': {
-            \   'makery': {
-            \     'lint': { 'compiler': 'credo' },
-            \     'test': { 'compiler': 'exunit' },
-            \     'build': { 'compiler': 'mix' }
-            \   }
-            \ }
-            \ }
-
-let g:projectionist_heuristics['rebar.config'] = {
-            \ '*.erl': {
-            \   'template': ['-module({basename}).', '', '-export([]).', ''],
-            \ },
-            \ 'src/*.app.src': { 'type': 'app' },
-            \ 'src/*.erl': {
-            \   'type': 'src',
-            \   'alternate': 'test/{}_SUITE.erl',
-            \ },
-            \ 'test/*_SUITE.erl': {
-            \   'type': 'test',
-            \   'alternate': 'src/{}.erl',
-            \ },
-            \ 'rebar.config': { 'type': 'rebar' }
-            \ }
-
+" Writing (distraction free)
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 
-function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
-endfunction
-
-set statusline+=%{NearestMethodOrFunction()}
-
-" By default vista.vim never run if you don't call it explicitly.
-"
-" If you want to show the nearest function in your statusline automatically,
-" you can add the following line to your vimrc
-autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
-let g:vista#renderer#enable_icon = 1
-let g:vista_default_executive = 'coc'
-let g:vista_fzf_preview = ['right:50%']
-let g:vista_sidebar_width = 50
-let g:vista_stay_on_open = 1
-
 "terminal
 tnoremap <Esc> <C-\><C-n>
-" tnoremap <expr> <C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
 
+" vim-startify (landing page)
 let g:startify_session_dir = '~/.vim/sessions'
 let g:startify_bookmarks = [ {'github': '~/projects/github'}, {'work': '~/work'} ]
 let g:startify_session_persistence = 1
@@ -371,13 +277,14 @@ let g:bufferline_echo = 0
 
 let g:mkdp_auto_close = 0
 
+" csv.vim - avoid reading all file
 let g:csv_start = 1
 let g:csv_end = 100
 
+" code navigation
 nmap <leader>pf :NERDTreeFind <cr>
 nmap <leader>p :NERDTreeToggle <cr>
 nmap <leader>b :BufExplorerVerticalSplit<cr>
-
 
 " <Leader>f{char} to move to {char} (overwin)
 map  <Leader>f <Plug>(easymotion-bd-f)
@@ -398,12 +305,6 @@ nmap <Leader>w <Plug>(easymotion-overwin-w)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
 
-" These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
-" Without these mappings, `n` & `N` works fine. (These mappings just provide
-" different highlight method and have some other features )
-" map  n <Plug>(easymotion-next)
-" map  N <Plug>(easymotion-prev)
-
 nnoremap <expr> n  'Nn'[v:searchforward]
 xnoremap <expr> n  'Nn'[v:searchforward]
 onoremap <expr> n  'Nn'[v:searchforward]
@@ -412,9 +313,21 @@ nnoremap <expr> N  'nN'[v:searchforward]
 xnoremap <expr> N  'nN'[v:searchforward]
 onoremap <expr> N  'nN'[v:searchforward]
 
+nnoremap <silent> <leader> :WhichKey '<leader>'<CR>
+nnoremap <silent> <space> :WhichKey '<space>'<CR>
+
+" better markdown syntax
 augroup markdown
     au!
     au BufNewFile,BufRead *.md,*.markdown setlocal filetype=ghmarkdown
 augroup END
 
+" cleanup screen
 nnoremap <leader>r :nohlsearch<cr>:diffupdate<cr>:syntax sync fromstart<cr><c-l>
+
+" Vista + coc tags
+nmap <leader>t :Vista!!<cr>
+let g:vista#renderer#enable_icon = 1
+let g:vista_default_executive = 'coc'
+let g:vista_sidebar_width = 50
+let g:vista_stay_on_open = 1
