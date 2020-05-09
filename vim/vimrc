@@ -41,6 +41,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jtratner/vim-flavored-markdown'
+Plug 'jaxbot/semantic-highlight.vim'
 " colorscheme & UI
 Plug 'vim-airline/vim-airline'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
