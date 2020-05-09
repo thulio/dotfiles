@@ -32,14 +32,12 @@ Plug 'liuchengxu/vim-which-key'
 Plug 'wellle/targets.vim'
 Plug 'liuchengxu/vista.vim'
 " languages
+Plug 'scrooloose/syntastic'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chrisbra/csv.vim'
 Plug 'tpope/vim-commentary'
 Plug 'hyhugh/coc-erlang_ls', {'do': 'yarn install --frozen-lockfile'}
-Plug 'elixir-editors/vim-elixir'
 Plug 'rust-lang/rust.vim'
-Plug 'scrooloose/syntastic'
-Plug 'vim-python/python-syntax'
 Plug 'sheerun/vim-polyglot'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'jtratner/vim-flavored-markdown'
