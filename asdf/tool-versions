@@ -1,0 +1,7 @@
+python 3.8.2 3.7.7 2.7.18
+nodejs 10.16.0
+elixir 1.10.3-otp-22
+erlang 22.3.4
+ruby system
+rust stable
+golang 1.14.1
