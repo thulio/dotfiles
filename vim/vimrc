@@ -300,9 +300,9 @@ nmap <Leader>l <Plug>(easymotion-overwin-line)
 map  <Leader>w <Plug>(easymotion-bd-w)
 nmap <Leader>w <Plug>(easymotion-overwin-w)
 
-" Search with vim-easymotion
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
+" " Search with vim-easymotion
+" map  / <Plug>(easymotion-sn)
+" omap / <Plug>(easymotion-tn)
 
 nnoremap <expr> n  'Nn'[v:searchforward]
 xnoremap <expr> n  'Nn'[v:searchforward]
