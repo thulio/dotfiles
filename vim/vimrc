@@ -17,7 +17,6 @@ call plug#begin(s:editor_root . '/plugged')
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'wsdjeg/FlyGrep.vim'
-Plug 'vim-scripts/bufexplorer.zip'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/mru.vim'
 Plug 'euclio/gitignore.vim'
@@ -118,12 +117,6 @@ colorscheme challenger_deep
 
 " nvim q
 set guicursor=
-
-" Find files with ctrl + p
-let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
-command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
-map <c-p> :Files<cr>
 
 " coc.vim - Language Servers
 " if hidden is not set, TextEdit might fail.
@@ -258,9 +251,16 @@ let g:csv_start = 1
 let g:csv_end = 100
 
 " code navigation
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
+
 nmap <leader>pf :NERDTreeFind <cr>
-nmap <leader>p :NERDTreeToggle <cr>
+" nmap <leader>p :NERDTreeToggle <cr>
 nmap <leader>b :BufExplorerVerticalSplit<cr>
+nmap <leader>b :Buffers<cr>
+map <c-p> :Files<cr>
+
 
 " <Leader>f{char} to move to {char} (overwin)
 map  <Leader>f <Plug>(easymotion-bd-f)
