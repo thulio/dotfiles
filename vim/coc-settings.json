@@ -1,25 +1,28 @@
 {
   // python
   "python.jediEnabled": false,
-  "python.formatting.blackPath": "~/.asdf/shims/black",
+  "python.formatting.blackPath": "~/.local/bin/black",
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
   "python.linting.mypyEnabled": true,
-  "python.linting.mypyPath": "~/.asdf/shims/mypy",
-  "python.linting.pylintArgs": ["--rcfile ~/.pylintrc"],
+  "python.linting.mypyPath": "~/.local/bin/mypy",
+  "python.linting.pylintArgs": [
+    "--rcfile ~/.pylintrc"
+  ],
   "python.linting.pylintEnabled": true,
-  "python.linting.pylintPath": "~/.asdf/shims/pylint",
+  "python.linting.pylintPath": "~/.local/bin/pylint",
   "python.linting.banditEnabled": true,
-  "python.linting.banditPath": "~/.asdf/shims/bandit",
+  "python.linting.banditPath": "~/.local/bin/bandit",
   "python.sortImports.path": "isort",
   // elixir
   "elixir.pathToElixirLS": "~/projects/github/elixir-ls/release/language_server.sh",
   "elixirLS.suggestSpecs": true,
   "elixirLS.mixEnv": "dev",
   // xml
-  "xml.java.home": "/Library/Java/JavaVirtualMachines/openjdk-13.0.2.jdk/Contents/Home",
+  "xml.java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home/",
   // misc
   "codeLens.enable": true,
+  "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "Markdown",
@@ -33,14 +36,24 @@
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
+      "args": [
+        "start"
+      ],
+      "filetypes": [
+        "sh"
+      ],
+      "ignoredRootPaths": [
+        "~"
+      ]
     },
     "dockerfile": {
       "command": "docker-langserver",
-      "filetypes": ["dockerfile"],
-      "args": ["--stdio"]
+      "filetypes": [
+        "dockerfile"
+      ],
+      "args": [
+        "--stdio"
+      ]
     }
   }
 }

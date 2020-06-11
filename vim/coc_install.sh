@@ -3,7 +3,12 @@ set -euf -o pipefail
 
 # install packages
 npm i -g bash-language-server dockerfile-language-server-nodejs
-python3 -m pip install python-language-server bandit pylint isort black
+
+python3 -m pip install -U pipx
+
+for package in poetry pipenv mypy flake8 pep8 black bandit pylint python-language-server isort; do python3 -m pipx install ${package}; done
+
+python3 -m pipx inject pylint pylint_venv
 
 # Install extensions
 mkdir -p ~/.config/nvim/
