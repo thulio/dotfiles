@@ -15,9 +15,9 @@ DISABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 if [ -f /usr/local/bin/scw-metadata ]; then
-    plugins=(git docker zsh-syntax-highlighting ubuntu thulio)
+    plugins=(git docker zsh-syntax-highlighting ubuntu z thulio)
 else
-    plugins=(git docker zsh-syntax-highlighting brew thulio)
+    plugins=(git docker zsh-syntax-highlighting archlinux z thulio)
 fi
 
 source $ZSH/oh-my-zsh.sh
