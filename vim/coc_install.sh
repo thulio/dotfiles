@@ -32,7 +32,7 @@ npm install \
     coc-json \
     coc-rls \
     coc-elixir \
-    coc-python \
+    coc-pyright \
     coc-css \
     coc-eslint \
     coc-xml \

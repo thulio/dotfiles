@@ -8,8 +8,10 @@ else
 endif
 
 " configure python for neovim plugin
-let g:python3_host_prog='/Users/thulio/.asdf/installs/python/3.8.3/bin/python'
-let g:python_host_prog='/Users/thulio/.asdf/installs/python/2.7.18/bin/python'
+" let g:python3_host_prog='/home/thulio/.asdf/installs/python/3.8.5/bin/python'
+" let g:python_host_prog='/home/thulio/.asdf/installs/python/2.7.18/bin/python'
+
+let g:loaded_python_provider = 0
 
 " vim-plug plugins
 call plug#begin(s:editor_root . '/plugged')
@@ -19,7 +21,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'vim-scripts/ctags.vim'
 Plug 'vim-scripts/mru.vim'
-Plug 'euclio/gitignore.vim'
 Plug 'vim-scripts/ctags.vim'
 Plug 'bling/vim-bufferline'
 Plug 'mhinz/vim-startify'
@@ -44,13 +45,13 @@ Plug 'jaxbot/semantic-highlight.vim'
 " colorscheme & UI
 Plug 'vim-airline/vim-airline'
 Plug 'challenger-deep-theme/vim', { 'as': 'challenger-deep' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
 Plug 'haishanh/night-owl.vim'
 Plug 'ajmwagar/vim-deus'
 Plug 'wadackel/vim-dogrun'
 Plug 'ntpeters/vim-better-whitespace'
 " tools
-Plug 'fisadev/vim-isort'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/limelight.vim'
 Plug 'junegunn/goyo.vim'
@@ -256,7 +257,7 @@ command! -bang -nargs=? -complete=dir Files
 let $FZF_DEFAULT_COMMAND = 'fd --type f --hidden --follow --exclude .git'
 
 nmap <leader>pf :NERDTreeFind <cr>
-" nmap <leader>p :NERDTreeToggle <cr>
+nmap <leader>p :NERDTreeToggle <cr>
 nmap <leader>b :BufExplorerVerticalSplit<cr>
 nmap <leader>b :Buffers<cr>
 map <c-p> :Files<cr>
@@ -311,13 +312,6 @@ let g:vista_stay_on_open = 1
 " highlight current line
 autocmd FileType * set cursorline
 
-" vv gui
-if exists('g:vv')
-    let g:webdevicons_enable = 0
-    VVset windowheight=100%
-    VVset windowwidth=100%
-    VVset fontfamily=Fira\ Code
-    VVset fontsize=14
-    VVset reloadchanged=1
-    VVset quitoncloselastwindow=1
-endif
+set guifont=Fira\ Code\ Regular:h14
+
+let g:NERDTreeGitStatusUseNerdFonts = 1

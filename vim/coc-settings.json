@@ -1,25 +1,23 @@
 {
   // python
-  "python.jediEnabled": false,
-  "python.formatting.blackPath": "~/.local/bin/black",
+  "python.formatting.blackPath": "/usr/bin/black",
   "python.formatting.provider": "black",
   "python.linting.enabled": true,
   "python.linting.mypyEnabled": true,
-  "python.linting.mypyPath": "~/.local/bin/mypy",
+  "python.linting.mypyPath": "/usr/bin/mypy",
   "python.linting.pylintArgs": [
     "--rcfile ~/.pylintrc"
   ],
   "python.linting.pylintEnabled": true,
-  "python.linting.pylintPath": "~/.local/bin/pylint",
+  "python.linting.pylintPath": "/usr/bin/pylint",
   "python.linting.banditEnabled": true,
-  "python.linting.banditPath": "~/.local/bin/bandit",
-  "python.sortImports.path": "isort",
+  "python.linting.banditPath": "/usr/bin/bandit",
   // elixir
   "elixir.pathToElixirLS": "~/projects/github/elixir-ls/release/language_server.sh",
   "elixirLS.suggestSpecs": true,
   "elixirLS.mixEnv": "dev",
   // xml
-  "xml.java.home": "/Library/Java/JavaVirtualMachines/openjdk-14.0.1.jdk/Contents/Home/",
+  "xml.java.home": "/usr/lib/jvm/default",
   // misc
   "codeLens.enable": true,
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
